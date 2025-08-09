@@ -22,11 +22,11 @@ function Homepage() {
         marginTop: '4rem',
         flexWrap: 'wrap'
       }}>
-        <div style={{ flex: '1 1 360px', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center' }}>
           <Card1 />
         </div>
 
-        <div style={{ maxWidth: 800, flex: '1 1 460px' }}>
+        <div style={{ maxWidth: 800, flex: '1 1 520px' }}>
           <h1 style={{
             fontSize: '4rem',
             marginBottom: '1rem',
