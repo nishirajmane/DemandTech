@@ -1,0 +1,71 @@
+/* Hero layout styling */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  grid-template-areas:
+    "headline headline"
+    "card desc";
+  align-items: center;
+  column-gap: 66px;
+  row-gap: 1px;
+  padding: 100px 40px 48px;
+}
+
+/* Top headline across */
+.hero .headline {
+  grid-area: headline;
+}
+
+.hero .title {
+  font-family: "Clash Display", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: clamp(100px, 6.5vw, 100px);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #0b0b0c;
+}
+
+.hero .title .accent {
+  background: linear-gradient(180deg, #5660ff 0%, #6678ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Second row: card left, description right */
+.hero .card-col {
+  grid-area: card;
+  display: flex;
+  justify-content: center;
+}
+
+.hero .desc-col {
+  grid-area: desc;
+}
+
+.hero .lead {
+  margin-top: 6px;
+  font-size: clamp(18px, 2.1vw, 22px);
+  color: #1f283d;
+  max-width: 54ch;
+}
+
+.hero .actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero .outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 2px solid #4f46e5;
+  color: #1f1f1f;
+  background: #fff;
+  font-weight: 700;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+}
