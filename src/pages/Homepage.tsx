@@ -16,7 +16,7 @@ function Homepage() {
           <h1 className="title">
             Intelligence that
             <br />
-            Drives <span className="accent">Growth</span>
+             Drives <span className="accent">Growth</span>
           </h1>
         </div>
 
@@ -26,14 +26,15 @@ function Homepage() {
 
         <div className="desc-col">
           <p className="lead">
-            <span style={{fontSize: '26px', marginRight: 6}}>“</span>
-            We combine cutting-edge tech with expert insight to pinpoint your highest-value prospects—accelerating your path to revenue, fast.
+            <span style={{fontSize: '64px', marginRight: 7, fontFamily: 'Neue Montreal',alignItems:'center',justifyContent:'center',lineHeight:'1'}}>
+
+            </span>We combine cutting-edge tech with expert insight to pinpoint your highest-value prospects—accelerating your path to revenue fast. We combine cutting-edge tech with expert insight to pinpoint your highest-value prospects—accelerating your path to revenue fast.
           </p>
           <div className="actions">
-            <button className="outline-btn">About Us</button>
+            <button className="outline-btn " style={{ marginLeft: '250px',marginTop:'10px', backgroundColor:'transparent', padding: '10px'}}>About Us</button>
           </div>
         </div>
-      </section>
+      </section> 
     </>
   );
 }
