@@ -22,25 +22,27 @@ function Homepage() {
         marginTop: '4rem',
         flexWrap: 'wrap'
       }}>
-        <div style={{ maxWidth: 800, flex: '1 1 380px' }}>
+        <div style={{ flex: '1 1 360px', display: 'flex', justifyContent: 'center' }}>
+          <Card1 />
+        </div>
+
+        <div style={{ maxWidth: 800, flex: '1 1 460px' }}>
           <h1 style={{
-            fontSize: '5rem',
+            fontSize: '4rem',
             marginBottom: '1rem',
             background: 'transparent ',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'blue ',
             fontFamily: 'Clash Display',
-            fontWeight: '400',
-            maxWidth: '800px'
+            fontWeight: '400'
           }}>
             Transforming Ideas into Digital Reality
           </h1>
           <p style={{
-            fontSize: '1.5rem',
-            maxWidth: '800px',
+            fontSize: '1.25rem',
             marginBottom: '2rem',
             color: '#213547',
-            lineHeight: 1
+            lineHeight: 1.2
           }}>
             We build innovative solutions that help businesses thrive in the digital age. Our cutting-edge technology and expert team deliver results that exceed expectations.
           </p>
@@ -49,13 +51,12 @@ function Homepage() {
               background: 'blue',
               color: 'white',
               border: 'none',
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
+              padding: '0.9rem 1.6rem',
+              fontSize: '1.1rem',
               borderRadius: '55px',
               cursor: 'pointer',
               boxShadow: '0 4px 14px rgba(0, 224, 244, 0.4)',
-              fontWeight: '400',
-              fontFamily: 'Clash Display'
+              fontWeight: '500'
             }}>
               Get Started
             </button>
@@ -63,19 +64,15 @@ function Homepage() {
               background: 'transparent',
               color: 'blue',
               border: '2px solid rgb(13, 0, 255)',
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
+              padding: '0.9rem 1.6rem',
+              fontSize: '1.1rem',
               borderRadius: '50px',
               cursor: 'pointer',
-              fontWeight: 'bold'
+              fontWeight: '600'
             }}>
               Learn More
             </button>
           </div>
-        </div>
-
-        <div style={{ flex: '1 1 320px', display: 'flex', justifyContent: 'center' }}>
-          <Card1 />
         </div>
       </div>
 
