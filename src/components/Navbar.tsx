@@ -10,7 +10,7 @@ function Navbar() {
       </div>
 
       <nav className="center-pill" aria-label="Primary Navigation">
-        <span className="home-dot" title="Home">🏠</span>
+        <span className="home-dot" title="Home" />
         <NavLink to="/services">Services</NavLink>
         <NavLink to="/about">Solution</NavLink>
         <NavLink to="/about">About</NavLink>

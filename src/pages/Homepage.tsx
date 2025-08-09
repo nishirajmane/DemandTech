@@ -1,6 +1,7 @@
 import { Ribbon1, Ribbon2 } from '../components';
 import Card1 from '../components/Card1';
 import './Homepage.css';
+import { SlideTabsExample } from '../components/ui/SliderTabs';
 
 function Homepage() {
   return (
@@ -9,9 +10,9 @@ function Homepage() {
         <Ribbon1 />
         <Ribbon2 />
       </div>
-
+      <SlideTabsExample />
       <section className="hero">
-        <div className="headline" style={{ marginLeft: '100px' }}>
+        <div className="headline" style={{ marginLeft: '50px',marginTop:'-50px',marginBottom:'50px' }}>
           <h1 className="title">
             Intelligence that
             <br />
