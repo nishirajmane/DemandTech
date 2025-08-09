@@ -5,7 +5,7 @@ interface Ribbon1Props {
   className?: string;
 }
 
-const Ribbon1: React.FC<Ribbon1Props> = ({ className = '' }) => {
+function Ribbon1({ className = '' }: Ribbon1Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
@@ -15,36 +15,25 @@ const Ribbon1: React.FC<Ribbon1Props> = ({ className = '' }) => {
 
     if (!svg || !path) return;
 
-    // Fix for Firefox and some browsers where getTotalLength might not be immediately available
     let pathLength = 0;
     try {
       pathLength = path.getTotalLength();
     } catch (e) {
-      // Fallback value if getTotalLength is not available
       pathLength = 5000;
     }
 
-    // Set initial state
     path.style.strokeDasharray = `${pathLength}`;
     path.style.strokeDashoffset = `${pathLength}`;
 
     const handleScroll = () => {
       const distance = window.scrollY;
       const totalDistance = svg.clientHeight - window.innerHeight;
-      
-      // Ensure we don't divide by zero
       const percentage = totalDistance > 0 ? distance / totalDistance : 0;
-      
       path.style.strokeDashoffset = `${pathLength * (1 - Math.min(1, Math.max(0, percentage)))}`;
     };
 
-    // Initial call to set up the animation
     handleScroll();
-    
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-    
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -81,6 +70,6 @@ const Ribbon1: React.FC<Ribbon1Props> = ({ className = '' }) => {
       </defs>
     </svg>
   );
-};
+}
 
 export default Ribbon1;

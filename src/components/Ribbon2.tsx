@@ -5,7 +5,7 @@ interface Ribbon2Props {
   className?: string;
 }
 
-const Ribbon2: React.FC<Ribbon2Props> = ({ className = '' }) => {
+function Ribbon2({ className = '' }: Ribbon2Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
@@ -13,59 +13,30 @@ const Ribbon2: React.FC<Ribbon2Props> = ({ className = '' }) => {
     const path = pathRef.current;
     if (!path) return;
 
-    // Use a fixed path length for consistency
     const pathLength = 8000;
-    
-    // Set initial state - important for animation to work
     path.style.strokeDasharray = String(pathLength);
     path.style.strokeDashoffset = String(pathLength);
-    
-    console.log('Ribbon2 initialized');
-    
+
     const handleScroll = () => {
-      // Get scroll position
       const scrollTop = window.scrollY;
       const documentHeight = document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
       const scrollable = documentHeight - windowHeight;
-      
-      // Calculate scroll percentage (0 to 1) with a much slower progression
-      // Using a custom easing function to control the animation pace
+
       const rawPercentage = scrollTop / scrollable;
       const clampedPercentage = Math.min(Math.max(rawPercentage, 0), 1);
-      
-      // Custom easing function that starts very slow and gradually accelerates
-      // This will make the animation complete only at the very end of scrolling
-      // Using a combination of easing functions for more control
-      
-      // Adjust the scroll percentage to start animation later and complete more gradually
-      // This scales the input range to delay the start and stretch the animation
       const adjustedPercentage = Math.max(0, (clampedPercentage - 0.1) / 0.9);
-      
-      // Apply multiple easing functions for fine-grained control
-      const easeInQuint = Math.pow(adjustedPercentage, 5); // Very slow start (power of 5)
-      const easeInOutSine = -(Math.cos(Math.PI * adjustedPercentage) - 1) / 2; // Smoother middle
-      
-      // Blend the two easing functions with more weight on the slower one
+      const easeInQuint = Math.pow(adjustedPercentage, 5);
+      const easeInOutSine = -(Math.cos(Math.PI * adjustedPercentage) - 1) / 2;
       const scrollPercentage = adjustedPercentage <= 0 ? 0 : easeInQuint * 0.8 + easeInOutSine * 0.2;
-      
-      // Calculate the new stroke offset
+
       const drawLength = pathLength * scrollPercentage;
       const dashOffset = pathLength - drawLength;
-      
-      // Apply the animation effect
       path.style.strokeDashoffset = String(dashOffset);
-      
-      console.log(`Ribbon2 scroll: ${scrollTop}, raw: ${rawPercentage.toFixed(2)}, adjusted: ${adjustedPercentage.toFixed(2)}, easeInQuint: ${easeInQuint.toFixed(2)}, easeInOutSine: ${easeInOutSine.toFixed(2)}, final: ${scrollPercentage.toFixed(2)}, offset: ${dashOffset.toFixed(0)}`);
     };
 
-    // Initial call
     handleScroll();
-    
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-    
-    // Clean up
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -102,7 +73,7 @@ const Ribbon2: React.FC<Ribbon2Props> = ({ className = '' }) => {
       </defs>
     </svg>
   );
-};
+}
 
 export default Ribbon2;
 
