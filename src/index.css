@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, 'Clash Display', sans-serif;
+  font-family: system-ui, 'Clash Display', 'Neue Montreal';
   line-height: 1.5;
   font-weight: 400;
 
