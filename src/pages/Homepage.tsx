@@ -1,4 +1,4 @@
-import { Ribbon1, Ribbon2 } from '../components';
+import { Ribbon1, Ribbon2, LogoSlider } from '../components';
 import Card1 from '../components/Card1';
 import './Homepage.css';
 import { SlideTabsExample } from '../components/ui/SliderTabs';
@@ -35,6 +35,7 @@ function Homepage() {
           </div>
         </div>
       </section> 
+      <LogoSlider />
     </>
   );
 }

@@ -1,4 +1,5 @@
-import { CSSProperties, HTMLAttributes, ReactNode, useCallback, useRef, useState } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 type WithClassName<T = {}> = T & { className?: string };
 
@@ -42,20 +43,20 @@ export function CardContainer({ className = '', children, style, ...rest }: With
       {...rest}
     >
       {/* Provide rotation to CardBody via context-like prop cloning */}
-      {Array.isArray(children)
-        ? children.map((child, index) => {
-            if (child && typeof child === 'object' && 'type' in (child as any)) {
-              return (
-                // @ts-expect-error children cloning
-                <child.type key={index} {...child.props} __cardRotation={rotation} />
-              );
-            }
-            return child as any;
-          })
-        : (children && typeof children === 'object' && 'type' in (children as any)
-            ? // @ts-expect-error children cloning
-              <children.type {...(children as any).props} __cardRotation={rotation} />
-            : children)}
+          {Array.isArray(children)
+            ? children.map((child, index) => {
+                if (child && typeof child === 'object' && 'type' in (child as any)) {
+                  const ChildComponent: any = (child as any).type;
+                  return <ChildComponent key={index} {...(child as any).props} __cardRotation={rotation} />;
+                }
+                return child as any;
+              })
+            : (children && typeof children === 'object' && 'type' in (children as any)
+                ? (() => {
+                    const ChildComponent: any = (children as any).type;
+                    return <ChildComponent {...(children as any).props} __cardRotation={rotation} />;
+                  })()
+                : children)}
     </div>
   );
 }
