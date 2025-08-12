@@ -2,6 +2,7 @@ import { Ribbon1, Ribbon2, LogoSlider } from '../components';
 import Card1 from '../components/Card1';
 import './Homepage.css';
 import { SlideTabsExample } from '../components/ui/SliderTabs';
+import Button from '../components/ui/Button';
 
 function Homepage() {
   return (
@@ -31,7 +32,8 @@ function Homepage() {
             </span>We combine cutting-edge tech with expert insight to pinpoint your highest-value prospects—accelerating your path to revenue fast. We combine cutting-edge tech with expert insight to pinpoint your highest-value prospects—accelerating your path to revenue fast.
           </p>
           <div className="actions">
-            <button className="outline-btn " style={{ marginLeft: '250px',marginTop:'10px', backgroundColor:'transparent', padding: '10px'}}>About Us</button>
+            {/* <button className="outline-btn " style={{ marginLeft: '250px',marginTop:'10px', backgroundColor:'transparent', padding: '10px'}}>About Us</button> */}
+            <Button/>
           </div>
         </div>
       </section> 
