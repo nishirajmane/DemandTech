@@ -3,6 +3,7 @@ import Card1 from '../components/Card1';
 import './Homepage.css';
 import { SlideTabsExample } from '../components/ui/SliderTabs';
 import Button from '../components/ui/Button';
+import DotGrid from '../components/DotGrid';
 
 function Homepage() {
   return (
@@ -13,6 +14,9 @@ function Homepage() {
       </div>
       <SlideTabsExample />
       <section className="hero">
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' ,zIndex: -2}}>
+          <DotGrid />
+        </div>
         <div className="headline" style={{ marginLeft: '50px',marginTop:'-50px',marginBottom:'50px' }}>
           <h1 className="title">
             Intelligence that
