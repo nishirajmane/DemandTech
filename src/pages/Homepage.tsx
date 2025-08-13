@@ -17,7 +17,7 @@ function Homepage() {
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' ,zIndex: -2}}>
           <DotGrid />
         </div>
-        <div className="headline" style={{ marginLeft: '50px',marginTop:'-50px',marginBottom:'50px' }}>
+        <div className="headline" style={{ marginLeft: '180px',marginTop:'-50px',marginBottom:'50px' }}>
           <h1 className="title">
             Intelligence that
             <br />

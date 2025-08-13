@@ -35,7 +35,7 @@
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
   animation: 35s logo-slide linear infinite;
   will-change: transform;
 }
